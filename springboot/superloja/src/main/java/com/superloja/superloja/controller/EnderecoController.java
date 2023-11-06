@@ -30,4 +30,17 @@ public class EnderecoController {
 
     // Implementar consulta por endereço:
     // https://viacep.com.br/ws/CE/Fortaleza/Duque/json/
+
+    @GetMapping("/consultaPorLocalidade")
+    @ResponseBody
+    public String consultarCepPorLocalidade(String uf, String cidade, String localidade) {
+        RestTemplate rt = new RestTemplate();
+        String url = apiUrl + "/" + uf + "/" + cidade + "/" + localidade + "/" + dataFormat;
+        CepData data = rt.getForObject(url, CepData.class);
+        Endereco e = new Endereco(data);
+        String msg = "Consultando UF: " + uf + ", Cidade: " + cidade + ", Localidade: " + localidade + ".\n";
+        msg += e;
+        return msg;
+    }
+
 }
