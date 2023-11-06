@@ -1,4 +1,4 @@
-package com.superloja.superloja.controller;
+package edu.pw2.superloja.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,26 +6,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
-import com.superloja.superloja.model.endereco.CepDTO;
-import com.superloja.superloja.model.endereco.Endereco;
+import edu.pw2.superloja.model.endereco.CepData;
+import edu.pw2.superloja.model.endereco.Endereco;
 
 @Controller
 @RequestMapping("/enderecos")
 public class EnderecoController {
 
-    private String apiURL = "https://viacep.com.br/ws";
+    private String apiUrl = "https://viacep.com.br/ws";
     private String dataFormat = "json";
 
     @GetMapping("/consulta")
     @ResponseBody
-    public String consultaCep (String cep){
+    public String consultarCep(String cep){
         RestTemplate rt = new RestTemplate();
-        String urlconsulta = apiURL + "/" + cep + "/" + dataFormat;
-        CepDTO dados = rt.getForObject(urlconsulta, CepDTO.class);
-        Endereco e = new Endereco(dados);
-        String resposta = "Resultado da busca" + e;
-        return resposta;
+        String url = apiUrl + "/" + cep + "/" + dataFormat;
+        CepData data = rt.getForObject(url, CepData.class);
+        Endereco e = new Endereco(data);
+        String msg = "Consultando cep: " + cep + ".\n";
+        msg += e;
+        return msg;
     }
 
-
+    // Implementar consulta por endereço:
+    // https://viacep.com.br/ws/CE/Fortaleza/Duque/json/
 }
