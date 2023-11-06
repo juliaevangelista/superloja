@@ -1,4 +1,4 @@
-package edu.pw2.superloja.controller;
+package com.superloja.superloja.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.pw2.superloja.model.cliente.Cliente;
-import edu.pw2.superloja.model.cliente.ClienteData;
-import edu.pw2.superloja.model.cliente.ClienteDataResumo;
-import edu.pw2.superloja.model.cliente.ClienteRepository;
+import com.superloja.superloja.model.cliente.Cliente;
+import com.superloja.superloja.model.cliente.ClienteData;
+import com.superloja.superloja.model.cliente.ClienteDataResumo;
+import com.superloja.superloja.model.cliente.ClienteRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.transaction.Transactional;
 

@@ -21,7 +21,7 @@ public class Endereco {
     private String localidade;
     private String uf;
 
-    public Endereco(CepDTO dados){
+    public Endereco(CepData dados){
         this.cep = dados.cep();
         this.logradouro = dados.logradouro();
         this.complemento = dados.complemento();

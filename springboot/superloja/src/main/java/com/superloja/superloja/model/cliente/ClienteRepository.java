@@ -1,4 +1,4 @@
-package edu.pw2.superloja.model.cliente;
+package com.superloja.superloja.model.cliente;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

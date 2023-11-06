@@ -1,4 +1,4 @@
-package edu.pw2.superloja.controller;
+package com.superloja.superloja.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
-import edu.pw2.superloja.model.endereco.CepData;
-import edu.pw2.superloja.model.endereco.Endereco;
+import com.superloja.superloja.model.endereco.CepData;
+import com.superloja.superloja.model.endereco.Endereco;
 
 @Controller
 @RequestMapping("/enderecos")
